@@ -1,0 +1,202 @@
+﻿<html>
+<head>
+   <title>Memory</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+   <link rel="stylesheet" href="style.css" />
+<script language="JavaScript"><!--
+var tires=new Array(16);
+var jeu=2;var carte=new Array(2);
+var no_carte=new Array(2);
+var gagne=0,flag_bloc=false;
+var nb_coups=0,fl_gene=true;
+var depart=40; // nombre d'essais
+var imam=new Array(8); //prech. des 8 images de cartes
+for (var i=0;i<8;i++) { imam[i]=new Image();imam[i].src='plafond_'+(i+1)+'.png'}
+
+function montre()
+{
+ for ( var i=0;i<16;i++)tires[i]=100;
+ charge();
+}
+function ret_2carte(n,m)
+{ 
+  document.images[n].src='azaz.png';
+  document.images[m].src='azaz.png';
+  flag_bloc=false;
+}
+function clic(n)
+{ 
+  if ((jeu>0)&& (!flag_bloc) && (nb_coups<depart) && (fl_gene)) 
+   { nb_coups+=1;document.fm.zone.value=(depart-nb_coups);
+     if (nb_coups<1) fl_gene=false;
+     document.images[n].src='plafond_'+(tires[n]+1)+'.png';
+     jeu -=1;
+     carte[jeu]=tires[n];no_carte[jeu]=n;
+     if (jeu==0)
+      { jeu=2; //alert(carte[0]+' '+ no_carte[0]+' ' +carte[1]+' '+no_carte[1]);
+        if (carte[1] != carte[0])
+         { 
+           flag_bloc=true;
+           setTimeout('ret_2carte(no_carte[0],no_carte[1]);',1000);
+         } 
+         else {
+               gagne+=1;
+               if (gagne==8)
+                {alert("Bravo...Vous avez fini en "+nb_coups+' Clicks !'+
+                       "\nPour recommencer appuyez sur F5");
+               fl_gene=false;
+              }
+         }
+       }
+     }
+}
+function dos()//ttes les cartes sur le dos..
+ {for (var n=0;n<16;n++)
+        document.images[n].src='imt.gif';
+ }
+function verif(m) //r�le : v�rifier si le nombre m est d�ja tir� !
+{//test pour ch. du tableau des couples..
+ var c=0;
+ for (i=0;i<16;i++)
+    if (tires[i]==m) c++;
+ if (c==2) return false; else return true;
+}
+
+function charge()//charge le tableau al�atoirement.
+ { for (var i=0;i<16;i++)
+          {tires[i]=100;
+           var flag_ok=false;
+           while (!flag_ok)
+            {  
+             var n=Math.floor(Math.random()*8);
+             if (verif(n)) { 
+                            tires[i]=n;
+                            flag_ok=true;
+                           }
+            }
+          }
+ }
+// -->
+</script>
+<style>
+/*------------------------------------------------Entrez ici votre code pour un format d'Ã©cran------------------------------------------------*/
+.center-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh; /* Ajustez la hauteur si nécessaire */
+    }
+	.center-table {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+	.row {
+		display: flex;
+	}
+	
+	table img {
+		width: 100%;
+	}
+
+
+
+/*--------------------------------------------------------Code pour format de tablette--------------------------------------------------------*/
+
+@media(min-width: 768px) and (max-width: 1388px)
+{
+.center-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh; /* Ajustez la hauteur si nécessaire */
+    }
+	.center-table {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+	.row {
+		display: flex;
+	}
+	
+	table img {
+		width: 100%;
+	}
+}
+
+
+/*-------------------------------------------------------Code pour format de smartphone-------------------------------------------------------*/
+
+@media(max-width: 767px)
+{
+.center-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh; /* Ajustez la hauteur si nécessaire */
+    }
+	.center-table {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+	.row {
+		display: flex;
+	}
+	
+	table img {
+		width: 100%;
+	}
+}
+
+</style>
+</head>
+<body onLoad="montre();" background="background.jpg">
+	<nav>
+		<div class="logo">
+			<a href="../index.html">Accueil</a>
+		</div>
+	</nav>
+	<div class="center-container">
+		<center class="center-table">
+		<table cellspacing=0 cellpadding=2 bgcolor="skyblue">
+			<tr>
+				<td><a href="javascript:clic(0)"><img src="azaz.png"></a></td>
+				<td><a href="javascript:clic(1)"><img src="azaz.png"></a></td>
+				<td><a href="javascript:clic(2)"><img src="azaz.png"></a></td>
+				<td><a href="javascript:clic(3)"><img src="azaz.png"></a></td>
+			</tr>
+			<tr>
+				<td><a href="javascript:clic(4)"><img src="azaz.png"></a></td>
+				<td><a href="javascript:clic(5)"><img src="azaz.png"></a></td>
+				<td><a href="javascript:clic(6)"><img src="azaz.png"></a></td>
+				<td><a href="javascript:clic(7)"><img src="azaz.png"></a></td>
+			</tr>
+			<tr>
+				<td><a href="javascript:clic(8)"><img src="azaz.png"></a></td>
+				<td><a href="javascript:clic(9)"><img src="azaz.png"></a></td>
+				<td><a href="javascript:clic(10)"><img src="azaz.png"></a></td>
+				<td><a href="javascript:clic(11)"><img src="azaz.png"></a></td>
+			</tr>
+			<tr>
+				<td><a href="javascript:clic(12)"><img src="azaz.png"></a></td>
+				<td><a href="javascript:clic(13)"><img src="azaz.png"></a></td>
+				<td><a href="javascript:clic(14)"><img src="azaz.png"></a></td>
+				<td><a href="javascript:clic(15)"><img src="azaz.png"></a></td>
+			</tr>
+			<tr>
+				<td align=center colspan="4"><form name="fm"><b><font face="Arial,Helvetica"><font size=-2>Il vous reste&nbsp;<input type="text" name="zone" size=2 value="40"> Clicks</font></font></b></form></td>
+			</tr>
+		</table>
+		</center>
+	</div>
+</body>
+</html>

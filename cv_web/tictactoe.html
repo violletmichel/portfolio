@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>VIOLLET Michel</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/tictactoe.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="#" class="logo">Tic Tac Toe</a>
+      <div class="nav-links">
+        <ul>
+          <li class="active"><a href="index.html">Accueil</a></li>
+        </ul>
+      </div>
+      <img
+        src="images/menu-btn.png"
+        alt="menu hamburger"
+        class="menu-hamburger"
+      />
+    </nav>
+    <header>
+      <h1>Tic Tac Toe</h1>
+      <section id="jeu">
+        <div data-index="0" class="case"></div>
+        <div data-index="1" class="case"></div>
+        <div data-index="2" class="case"></div>
+        <div data-index="3" class="case"></div>
+        <div data-index="4" class="case"></div>
+        <div data-index="5" class="case"></div>
+        <div data-index="6" class="case"></div>
+        <div data-index="7" class="case"></div>
+        <div data-index="8" class="case"></div>
+      </section>
+      <h2></h2>
+      <button id="recommencer">Recommencer</button>
+    </header>
+    <div id="scroll-to-top">
+      <a href="#top"><i class="fas fa-arrow-up"></i></a>
+    </div>
+  </body>
+  <script src="script/tictactoe.js"></script>
+  <script>
+    const menuHamburger = document.querySelector(".menu-hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuHamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("mobile-menu");
+    });
+  </script>
+</html>
