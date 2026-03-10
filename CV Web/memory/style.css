@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+	background: url("background.jpg");
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	background-attachment:fixed;
+	font-family: "Raleway", sans-serif;
+}
+
+body nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 20px;
+	background-color: #18212b;
+}
+
+body nav a {
+	color: #bababa;
+	text-decoration: none;
+	margin-right: 10px;
+}
+
+body nav a:hover {
+	color: skyblue;
+	border-bottom: 1px solid skyblue;
+}
