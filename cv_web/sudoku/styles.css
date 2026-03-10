@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	border: 0;
+	border-spacing: 0;
+	box-sizing: border-box;
+}
+
+header nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 20px;
+	background-color: #18212b;
+}
+
+header nav a {
+	color: #bababa;
+	text-decoration: none;
+	margin-right: 10px;
+}
+
+header nav a:hover {
+	color: skyblue;
+	border-bottom: 1px solid skyblue;
+}
+
+body {
+	font-family: "Raleway", sans-serif;
+	background: url("images/background.jpg");
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	background-attachment:fixed;
+	color: #fff;
+	text-align: center;
+}
+
+body .principal {
+	margin-top: 180px;
+}
+
+body .principal h1 {
+	color: skyblue;
+}
+
+body .principal h4 {
+	margin-top: -20px;
+	padding: 20px;
+}
+
+
+table {
+	margin: auto;
+}
+tr {
+	border-bottom: 1px solid #ccc;
+	display: block;
+}
+
+tr:nth-of-type(3),
+tr:nth-of-type(6) {
+	border-bottom: 1px solid #000;
+}
+
+td {
+	border-right: 1px solid #ccc;
+}
+
+td:nth-of-type(3),
+td:nth-of-type(6) {
+	border-right: 1px solid #000;
+}
+
+input {
+	height: min(calc(100vh / 10), calc(100vw / 10));
+	width: min(calc(100vh / 10), calc(100vw / 10));
+	background-color: skyblue;
+	font-size: min(7vh, 7vw);
+	text-align: center;
+}
+
+input[disabled] {
+	color: #2b2b95;
+}
+
+input:invalid,
+.invalide {
+	border: 1px solid #eec3c3;
+	background-color: #eec3c3;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+ 
+/* Chrome */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+	margin:0;
+}
+ 
+/* Opéra*/
+input::-o-inner-spin-button,
+input::-o-outer-spin-button { 
+	-o-appearance: none;
+	margin:0
+}
+
+button {
+	display: block;
+	margin: 1em auto 0;
+	padding: .5em 2em;
+	font-size: min(3vh, 3vw);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Pour centrer les boutons horizontalement */
+  margin-bottom: 20px; /* Espace en bas pour séparer les boutons du tableau */
+}
+
+.button-container button {
+  margin: 0 5px; /* Espacement entre les boutons */
+}
+
+/* Style de la fenêtre modale */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: skyblue;
+  padding: 20px;
+  border-radius: 5px;
+  color: black;
+}
+
+.close-button {
+  cursor: pointer;
+  color: red;
+  float: right;
+}
+
+.propos {
+	padding: 30px;
+	color: #fff;
+	align-items: center;
+}
+
+.propos h1 {
+	text-align: center;
+	color: skyblue;
+}
+
+.propos .fiches {
+	margin-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.propos .fiches .carte {
+	background-color: skyblue;
+	padding: 20px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	width: 180px;
+	height: 180px;
+}
+
+.propos .fiches .carte h1 {
+	color: #000;
+}
+
+.propos .fiches a {
+		text-decoration: none;
+		color: #000;
+}
+
+.propos .fiches .carte img {
+	height: 90px;
+
+}
+
+.presentation h1 {
+	text-align: center;
+	color: skyblue;
+}
