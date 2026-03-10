@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Jeu du Pendu</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="category-selection">
+      <h1>Choisissez une catégorie</h1>
+      <select id="category">
+        <option value="pays">Pays</option>
+        <option value="animaux">Animaux</option>
+        <option value="fruits">Fruits</option>
+        <option value="couleurs">Couleurs</option>
+        <option value="metiers">Métiers</option>
+        <option value="vehicules">Véhicules</option>
+        <option value="fourniture">Fournitures de bureau</option>
+        <option value="sports">Sports</option>
+        <option value="nourriture">Nourriture</option>
+        <option value="instruments">Instruments de musique</option>
+      </select>
+      <button id="start-game">Commencer le jeu</button>
+    </div>
+    <div id="wrapper">
+      <div id="upper-container">
+        <div id="score"></div>
+        <div id="answer">
+          <ul></ul>
+        </div>
+      </div>
+      <div id="choices">
+        <ul></ul>
+      </div>
+    </div>
+    <script src="words.js"></script>
+    <script src="initFunctions.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

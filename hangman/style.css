@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', cursive; /* Utilisation de la police de caractères de style rétro */
+  background-color: #1f1f1f; /* Couleur de fond générale */
+}
+
+/* Structure de base */
+body,
+#wrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#wrapper {
+  flex: 1;
+}
+
+#upper-container {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+#score,
+#answer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#choices {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 0.5;
+  text-align: center;
+}
+
+#choices h1 {
+  color: #fff; /* Couleur de texte blanche */
+  font-size: 24px; /* Taille de police */
+}
+
+#choices .win {
+  color: #27ae60; /* Vert */
+}
+
+#choices .lose {
+  color: #c0392b; /* Rouge */
+}
+
+#choices li,
+#answer li {
+  display: inline-block;
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+#choices li:hover {
+  cursor: pointer;
+  background-color: #2980b9;
+}
+
+.incorrect {
+  background-color: #c0392b;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.correct {
+  background-color: #27ae60;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Centrer verticalement et horizontalement la section "category-selection" */
+#category-selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#category-selection h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #3498db;
+}
+
+#category {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+#category option {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+#start-game {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#start-game:hover {
+  background-color: #2980b9;
+}
+
+button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Styles pour les téléphones en mode portrait et autres */
+@media (max-width: 600px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  #category-selection {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  #upper-container {
+    flex-direction: column;
+  }
+
+  #choices li,
+  #answer li {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
